@@ -11,6 +11,7 @@ export default {
                   <div @click="filter = ''">X</div>
                 </label>
               </div>
+              <div v-if="!Object.keys(filteredContacts).length">no result</div>
               <div
                   v-for="char in character"
                   v-if="filteredContacts && filteredContacts[char]"
