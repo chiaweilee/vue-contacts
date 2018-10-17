@@ -1,6 +1,9 @@
 import './contacts.scss'
 
 const browser = typeof window !== 'undefined'
+const getCap = function (str) {
+  return str.toString().substring(0, 1).toUpperCase()
+}
 
 export default {
   name: 'Contacts',
@@ -76,7 +79,7 @@ export default {
             return
           }
         }
-        const char = c.name.toString().substring(0, 1).toUpperCase()
+        const char = getCap(c.name)
         if (vm.character.indexOf(char) > -1) {
           if (!result[char]) {
             result[char] = []
@@ -92,6 +95,12 @@ export default {
       return result
     }
   },
+  watch: {
+    filter: function (to) {
+      if (!to.length) return
+      this.current = Object.keys(this.filteredContacts)[0]
+    }
+  },
   data: function () {
     const character = ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     return {
@@ -104,6 +113,7 @@ export default {
     if (browser) this.$refs.root.removeEventListener('scroll', this.ev, false)
   },
   mounted: function () {
+    this.ev()
     if (browser) this.$refs.root.addEventListener('scroll', this.ev, false)
   },
   methods: {
