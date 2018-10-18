@@ -24,7 +24,7 @@ Vue.use(contacts)
 or use as component
 
 ```vue.js
-import contacts from 'vue-contacts/es/contacts'
+import contacts from 'vue-contacts/lib/es/contacts'
 export default {
   components: {
     contacts
