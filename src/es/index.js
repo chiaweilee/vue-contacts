@@ -1,6 +1,3 @@
-import './base.scss'
-import './vant.scss'
-
 const browser = typeof window !== 'undefined'
 const getCap = function (str) {
   return str.toString().substring(0, 1).toUpperCase()
@@ -29,11 +26,11 @@ export default {
                   v-for="char in character"
                   v-if="filteredContacts && filteredContacts[char]"
                   :key="char"
+                  :ref="char"
                 >
                   <div
                     class="character-title"
                     v-text="char"
-                    :ref="char"
                   ></div>
                   <div
                     class="contacts-list"
@@ -44,8 +41,8 @@ export default {
                       :key="key"
                       @click="emit(contact)"
                     >
-                      <span>
-                        <img :class="contact.iconClass" :src="contact.icon || defaultIcon">
+                      <span v-if="contact.iconClass" :class="contact.iconClass">
+                        <img v-if="contact.icon" :src="contact.icon">
                       </span>
                       <span class="contact-name" v-text="contact.name"/>
                       <span v-if="contact.rightText" class="contact-right-text" v-text="contact.rightText"/>
@@ -83,10 +80,6 @@ export default {
         })
       },
       required: true
-    },
-    defaultIcon: {
-      type: String,
-      default: 'data:image/gif;base64,R0lGODlhEAAQAKEAAEKF9NPi/AAAAAAAACH5BAEAAAIALAAAAAAQABAAAAIkFI6Zpu0YYnxnAvtC0hTzzH3UJY6kSUqdiCltu7GjBKMKgwoFADs='
     },
     placeHolder: {
       type: String,

@@ -65,7 +65,7 @@ export default {
           iconClass: 'fa fa-icon'
         },
         {
-          name: 'Cate Blanchett',
+          name: 'Cate Blanchett'
         },
         {
           name: 'H.O.T',

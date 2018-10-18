@@ -14,17 +14,20 @@ npm install vue-contacts
 <img src="https://github.com/chiaweilee/vue-contacts/blob/0.1.x/preview/screenshot1.png" alt="License">
 <img src="https://github.com/chiaweilee/vue-contacts/blob/0.1.x/preview/screenshot2.png" alt="License">
 
-### Import
+### Global import
 ```js
 import Vue from 'vue'
 import contacts from 'vue-contacts'
+// You can also write css yourself 😊
+import 'vue-contacts/base.css'
+import 'vue-contacts/vant.css'
 Vue.use(contacts)
 ```
 
-or use as component
+##### direct import in component
 
 ```vue.js
-import contacts from 'vue-contacts/lib/es/contacts'
+import { contacts } from 'vue-contacts'
 export default {
   components: {
     contacts
@@ -115,7 +118,3 @@ export default {
 }
 </script>
 ```
-
-### CSS
-In development,
-see 'vue-contacts/es/base.css' and 'vue-contacts/es/vant.css'.

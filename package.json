@@ -1,6 +1,6 @@
 {
   "name": "vue-contacts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "sideEffects": false,
   "scripts": {
@@ -12,8 +12,9 @@
     "test": "npm run test:unit & npm run test:e2e",
     "test:e2e": "build/bin/vue-cli-service.js test:e2e",
     "test:unit": "build/bin/vue-cli-service.js test:unit",
+    "release": "npm run es5 & npm run sass",
     "es5": "npx babel --no-babelrc src --out-dir lib",
-    "sass": "sass src/es/:lib/es",
+    "sass": "sass src:lib",
     "commit": "npx git-cz"
   },
   "gitHooks": {
