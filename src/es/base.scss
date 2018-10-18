@@ -1,17 +1,22 @@
 [data-v-contacts] {
+  overflow: hidden;
   position: relative;
-  height: 300px;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  background-color: #eee;
 
+  .wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: #eee;
+  }
   .character-title {
     text-align: left;
     padding: 5px 20px;
   }
 
   .character-list {
-    position: fixed;
+    position: absolute;
     right: 0;
     top: 0;
 

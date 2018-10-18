@@ -1,4 +1,5 @@
-import './contacts.scss'
+import './base.scss'
+import './vant.scss'
 
 const browser = typeof window !== 'undefined'
 const getCap = function (str) {
@@ -7,38 +8,54 @@ const getCap = function (str) {
 
 export default {
   name: 'Contacts',
-  template: `<div data-v-contacts ref="root">
-              <div class="contact-search" ref="top">
-                <label>
-                  <input v-model="filter" placeholder="">
-                  <div @click="filter = ''">X</div>
-                </label>
-              </div>
-              <div v-if="!Object.keys(filteredContacts).length">no result</div>
-              <div
+  template: `<div data-v-contacts>
+              <div class="wrapper" ref="root">
+                <div ref="top"/>
+                <slot name="header"/>
+                <!--search-->
+                <div class="contacts-search">
+                  <div class="search-field">
+                    <div class="search-value">
+                    <div class="search-body">
+                    <input type="search" v-model="filter" :placeholder="placeHolder" class="search-input">
+                    </div></div></div>
+                    <div class="search-action" v-if="filter.length"><div @click="filter = ''" v-text="cancelText"></div>
+                  </div>
+                </div>
+                <!--no result-->
+                <div v-if="!Object.keys(filteredContacts).length">no result</div>
+                <!--contacts-->
+                <div
                   v-for="char in character"
                   v-if="filteredContacts && filteredContacts[char]"
                   :key="char"
                 >
-                <div
-                  class="character-title"
-                  v-text="char"
-                  :ref="char"
-                ></div>
-                <div
-                  class="contacts-list"
-                >
+                  <div
+                    class="character-title"
+                    v-text="char"
+                    :ref="char"
+                  ></div>
+                  <div
+                    class="contacts-list"
+                  >
                     <div
-                        class="contact-panel"
-                        v-for="(contact, key) in filteredContacts[char]"
-                        :key="key"
+                      class="contact-panel"
+                      v-for="(contact, key) in filteredContacts[char]"
+                      :key="key"
+                      @click="emit(contact)"
                     >
-                        <img :src="contact.icon || 'ssss'">
-                        <span class="contact-name" v-text="contact.name"/>
-                        <span v-if="contact.remark" class="contact-remark" v-text="'(' + contact.remark + ')'"/>
+                      <span>
+                        <img :class="contact.iconClass" :src="contact.icon || defaultIcon">
+                      </span>
+                      <span class="contact-name" v-text="contact.name"/>
+                      <span v-if="contact.rightText" class="contact-right-text" v-text="contact.rightText"/>
+                      <span v-if="contact.remark" class="contact-remark" v-text="contact.remark"/>
                     </div>
+                  </div>
                 </div>
+                <slot name="footer"/>
               </div>
+              <!--characters-->
               <div class="character-list">
                 <ol>
                   <li @click="goTop()">↑</li>
@@ -66,6 +83,18 @@ export default {
         })
       },
       required: true
+    },
+    defaultIcon: {
+      type: String,
+      default: 'data:image/gif;base64,R0lGODlhEAAQAKEAAEKF9NPi/AAAAAAAACH5BAEAAAIALAAAAAAQABAAAAIkFI6Zpu0YYnxnAvtC0hTzzH3UJY6kSUqdiCltu7GjBKMKgwoFADs='
+    },
+    placeHolder: {
+      type: String,
+      default: ''
+    },
+    cancelText: {
+      type: String,
+      default: 'Cancel'
     }
   },
   computed: {
@@ -136,6 +165,9 @@ export default {
     },
     goTop: function () {
       this.$refs.top.scrollIntoView()
+    },
+    emit: function (to) {
+      this.$emit('contact', to)
     }
   }
 }

@@ -1,5 +1,14 @@
 <template>
-  <contacts :contacts="contacts"/>
+  <contacts
+    :contacts="contacts"
+    @contact="getContact"
+    style="height: 300px">
+    <div slot="header">Vue contacts demo</div>
+    <div
+      slot="footer"
+      v-text="contacts.length + ' contacts'"
+    />
+  </contacts>
 </template>
 
 <script>
@@ -8,83 +17,70 @@ export default {
     return {
       contacts: [
         {
-          name: 'Jack'
-        },
-        {
-          name: 'Jason'
-        },
-        {
-          name: 'Jv'
-        },
-        {
-          name: 'Jack'
-        },
-        {
-          name: 'Jason'
+          name: '+v',
+          remark: 'Chiawei Lee',
+          icon: 'https://avatars0.githubusercontent.com/u/29817353?s=40&v=4',
+          rightText: 'Github'
         },
         {
           name: '岳云鹏',
-          remark: 'yue yunpeng'
+          remark: 'Yue yunpeng',
+          icon: 'data:image/gif;base64,R0lGODlhEAAQAMIAAAQEBJeXl+MmKvzr7ICAgO10dvGUAAAAACH5BAEAAAcALAAAAAAQABAAAANHeLrc/tCZaaB4lYl91Tyfwm0HCZ7lqC4VVwxwwWnCOwQEPMhdCgNAgG5WehEAOEBuQKzdCAFgYGcSGaXU3mJT6PK0kbB4kQAAOw=='
         },
         {
-          name: 'Jv'
+          name: 'David Bowie',
+          remark: 'David Robert Haywood Jones',
+          icon: 'data:image/gif;base64,R0lGODlhEAAQAIAAAGWoJQAAACH5BAEAAAEALAAAAAAQABAAAAIjjG+ggJ2rHIJRHmgDpW3v6WFRSJbmcp3pOTLqWnEwo2FgjBYAOw==',
+          rightText: 'Star'
         },
         {
-          name: 'Jack'
+          name: 'Michael Jackson'
         },
         {
-          name: 'Jason'
+          name: 'Michael Jordan'
         },
         {
-          name: 'Jv'
+          name: 'Michael Schumacher'
         },
         {
-          name: 'Jack'
+          name: 'Michael Phelps'
         },
         {
-          name: 'Jason'
+          name: 'Michael James Owen',
+          remark: 'Owen'
         },
         {
-          name: 'Jv'
+          name: 'Sir Michael Caine',
+          remark: 'Michael Caine'
         },
         {
-          name: 'David'
+          name: 'Mike Tyson'
         },
         {
-          name: 'Monkey'
+          name: 'Anne Hathaway',
+          icon: '',
+          iconClass: 'fa fa-icon'
         },
         {
-          name: 'Batman'
+          name: 'Cate Blanchett',
         },
         {
-          name: '123 mutouren'
-        },
-        {
-          name: 'angel'
-        },
-        {
-          name: 'baby'
-        },
-        {
-          name: 'tai'
-        },
-        {
-          name: 'lee'
-        },
-        {
-          name: 'gaga'
-        },
-        {
-          name: 'lisa'
-        },
-        {
-          name: 'men'
-        },
-        {
-          name: 'mouse'
+          name: 'H.O.T',
+          remark: 'Tony An, Kang Ta'
         }
       ]
+    }
+  },
+  methods: {
+    getContact: function (to) {
+      console.log(`You click ${to.name}`)
     }
   }
 }
 </script>
+
+<style>
+  body {
+    overflow: hidden;
+  }
+</style>
