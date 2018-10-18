@@ -29,11 +29,11 @@ export default {
                   v-for="char in character"
                   v-if="filteredContacts && filteredContacts[char]"
                   :key="char"
+                  :ref="char"
                 >
                   <div
                     class="character-title"
                     v-text="char"
-                    :ref="char"
                   ></div>
                   <div
                     class="contacts-list"
