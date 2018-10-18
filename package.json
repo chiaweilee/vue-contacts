@@ -13,6 +13,7 @@
     "test:e2e": "build/bin/vue-cli-service.js test:e2e",
     "test:unit": "build/bin/vue-cli-service.js test:unit",
     "es5": "npx babel --no-babelrc src --out-dir lib",
+    "sass": "sass src/es/:lib/es",
     "commit": "npx git-cz"
   },
   "gitHooks": {
