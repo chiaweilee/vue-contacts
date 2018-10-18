@@ -10,6 +10,10 @@ Mobile contacts component for Vue
 npm install vue-contacts
 ```
 
+### Preview
+<img src="https://github.com/chiaweilee/vue-contacts/blob/0.1.x/preview/screenshot1.png" alt="License">
+<img src="https://github.com/chiaweilee/vue-contacts/blob/0.1.x/preview/screenshot2.png" alt="License">
+
 ### Import
 ```js
 import Vue from 'vue'
