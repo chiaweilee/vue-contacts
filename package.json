@@ -1,5 +1,5 @@
 {
-  "name": "vue-dev",
+  "name": "vue-contacts",
   "version": "0.1.0",
   "private": true,
   "sideEffects": false,
