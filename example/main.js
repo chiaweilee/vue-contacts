@@ -5,6 +5,8 @@ import store from './store'
 import './registerServiceWorker'
 
 import contacts from '@src'
+import '@src/base.scss'
+import '@src/vant.scss'
 Vue.use(contacts)
 
 Vue.config.productionTip = false

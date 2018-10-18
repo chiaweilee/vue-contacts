@@ -1,6 +1,3 @@
-import './base.scss'
-import './vant.scss'
-
 const browser = typeof window !== 'undefined'
 const getCap = function (str) {
   return str.toString().substring(0, 1).toUpperCase()

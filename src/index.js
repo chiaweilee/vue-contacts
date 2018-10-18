@@ -1,4 +1,8 @@
-import contacts from './es/contacts'
+import contacts from './es'
+
+export {
+  contacts
+}
 
 export default {
   install: function (Vue) {
