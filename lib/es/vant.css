@@ -1,0 +1,130 @@
+[data-v-contacts] .contacts-search {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: 7px 15px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+[data-v-contacts] .contacts-search .search-field {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  padding: 3px 10px;
+  border-radius: 4px;
+  width: 100%;
+  height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  box-sizing: border-box;
+  line-height: 24px;
+  position: relative;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+  overflow: hidden;
+}
+[data-v-contacts] .contacts-search .search-field .search-value {
+  overflow: hidden;
+  text-align: left;
+  position: relative;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+[data-v-contacts] .contacts-search .search-field .search-value .search-body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+[data-v-contacts] .contacts-search .search-field .search-value .search-body .search-input {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  resize: none;
+  display: block;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+[data-v-contacts] .contacts-search .search-action {
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 30px;
+  color: #666;
+}
+[data-v-contacts] .character-title {
+  padding: 5px 15px;
+  line-height: 1.4;
+  font-size: 14px;
+  text-align: left;
+  color: #666;
+}
+[data-v-contacts] .contacts-list .contact-panel {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  line-height: 24px;
+  position: relative;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+  overflow: hidden;
+}
+[data-v-contacts] .contacts-list .contact-panel img {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #eee;
+}
+[data-v-contacts] .contacts-list .contact-panel .contact-name {
+  padding-left: 10px;
+  height: 20px;
+  line-height: 20px;
+  width: auto;
+  white-space: nowrap;
+}
+[data-v-contacts] .contacts-list .contact-panel .contact-remark {
+  height: 20px;
+  line-height: 20px;
+  padding-left: 10px;
+  width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #aaa;
+}
+[data-v-contacts] .contacts-list .contact-panel .contact-right-text {
+  position: absolute;
+  right: 20px;
+  height: 20px;
+  line-height: 20px;
+  padding-left: 10px;
+  width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+[data-v-contacts] .contacts-list .contact-panel .contact-right-text + .contact-remark {
+  padding-right: 35px;
+}
+[data-v-contacts] .contacts-list .contact-panel:not(:last-child)::after {
+  content: " ";
+  position: absolute;
+  pointer-events: none;
+  box-sizing: border-box;
+  left: 15px;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  border-bottom: 1px solid #eee;
+}
+
+/*# sourceMappingURL=vant.css.map */
