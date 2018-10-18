@@ -2,7 +2,10 @@
   <contacts
     :contacts="contacts"
     @contact="getContact"
-    style="height: 300px">
+    style="height: 300px"
+    :place-holder="'Please enter name or remark to search'"
+    :cancel-text="'Cancel search'"
+  >
     <div slot="header">Vue contacts demo</div>
     <div
       slot="footer"
