@@ -1,4 +1,7 @@
 # vue-contacts
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/chiaweilee/vue-contacts.svg)](https://greenkeeper.io/)
+
 Mobile contacts component for Vue
 
 <a href="https://npmcharts.com/compare/vue-contacts?minimal=true"><img src="https://img.shields.io/npm/dm/vue-contacts.svg" alt="Downloads"></a>
